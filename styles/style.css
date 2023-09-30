@@ -87,7 +87,8 @@ ol {
 .content {
   display: flex;
   gap: 30px;
-  margin: 133px 30px;
+  margin: auto 30px;
+  align-self: center;
   inline-size: 1140px;
   block-size: 534px;
 }
