@@ -9,19 +9,21 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 ul,
 ol,
@@ -32,7 +34,275 @@ fieldset {
   padding: 0;
 }
 
+fieldset {
+  border: none;
+}
+
 ul,
 ol {
   list-style: none;
+}
+
+.button {
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  block-size: 34px;
+}
+
+.button:hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: none;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.content {
+  display: flex;
+  gap: 30px;
+  margin: 133px 30px;
+  inline-size: 1140px;
+  block-size: 534px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 16px;
+  inline-size: min-content;
+}
+
+.result__video-container {
+  position: relative;
+  inline-size: 711px;
+  block-size: 386px;
+}
+
+.result__video {
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.search-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  inline-size: fit-content;
+}
+
+.search-form__fieldset-title {
+  font-weight: 400;
+  font-size: 18px;
+  cursor: default;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* пробовал через not(:first-child), этот вариант более щедящий */
+
+.search-form__label:hover > .search-form__label-text {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: none;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  border: 1px solid #fff;
+  inline-size: 19px;
+  block-size: 19px;
+}
+
+/* выбранное состояние чекбокса */
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  content: "";
+  margin: auto;
+  background-color: #fff;
+  inline-size: 15px;
+  block-size: 15px;
+}
+
+.search-form__pseudo-checkbox:active::before {
+  content: "";
+  margin: auto;
+  background-color: #fff;
+  inline-size: 15px;
+  block-size: 15px;
+}
+
+/* актив текстового поисковика */
+
+.search-form__textfield:active {
+  border-inline-start: 1px solid #ffffff;
+  border-inline-end: 1px solid #ffffff;
+  outline: none;
+}
+
+.search-form__submit-button {
+  align-self: end;
+}
+
+.search-form__textfield {
+  border-inline-start: 0;
+  border-inline-end: 0;
+  border-block-start: 1px solid #ffffff;
+  border-block-end: 1px solid #ffffff;
+  outline: none;
+  color: #ffffffb3;
+  font-family: inherit;
+  font-size: 18px;
+  background-color: transparent;
+  appearance: none;
+  inline-size: 225px;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 26px;
+}
+
+.title {
+  padding-top: 2px;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 0.94;
+  text-transform: uppercase;
+  block-size: 210px;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: scroll;
+}
+
+.content__list-item {
+  margin: 2px;
+}
+
+.content__list-item:hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: none;
+}
+
+.content__list-item:active {
+  box-shadow: -2px 2px 0 0 #545050, -2px -2px 0 0 #545050;
+  background-color: #545050;
+}
+
+.content__card-link {
+  display: block;
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.content__card-link_current {
+  box-shadow: -2px 2px 0 0 #545050, -2px -2px 0 0 #545050;
+  background-color: #545050;
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 4px;
+  margin-top: 2px; /* margin'ами подбивались к макету( не судите строго, если есть другой выход буду рад узнать) */
+}
+
+.content__video-card-title {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.content__video-card-description {
+  line-height: 90%;
+}
+
+.content__video-card-thumbnail {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 194px;
+  block-size: 103px;
+}
+
+.content__list-item:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.more-button {
+  margin: 2px;
+  inline-size: 394px; /*подбил под макет, чтобы сделать фокус видмым*/
 }
