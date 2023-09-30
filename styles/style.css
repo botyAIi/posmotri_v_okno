@@ -90,7 +90,6 @@ ol {
   margin: auto 30px;
   align-self: center;
   inline-size: 1140px;
-  block-size: 534px;
 }
 
 .result {
@@ -236,12 +235,16 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  overflow: scroll;
+  overflow: auto;
+  block-size: 298px;
 }
 
 .content__list-item {
   margin: 2px;
+}
+
+.content__list-item:not(:last-child) {
+  margin-block-end: 32px;
 }
 
 .content__list-item:hover {
@@ -250,8 +253,9 @@ ol {
   text-decoration-skip-ink: none;
 }
 
-.content__list-item:active {
-  box-shadow: -2px 2px 0 0 #545050, -2px -2px 0 0 #545050;
+ /* box-shadow: -2px 2px 0 0 #545050, -2px -2px 0 0 #545050; По макету выделенная часть в актив сдвинута влево, думалось что это задумка такая*/
+
+ .content__list-item:active {
   background-color: #545050;
 }
 
@@ -262,8 +266,9 @@ ol {
   text-decoration: none;
 }
 
-.content__card-link_current {
-  box-shadow: -2px 2px 0 0 #545050, -2px -2px 0 0 #545050;
+/* box-shadow: -2px 2px 0 0 #545050, -2px -2px 0 0 #545050; По макету выделенная часть в сдвинута влево, думалось что это задумка такая*/
+
+.content__card-link_current { 
   background-color: #545050;
 }
 
